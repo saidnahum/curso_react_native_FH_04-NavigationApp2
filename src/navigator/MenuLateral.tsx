@@ -27,7 +27,7 @@ export const MenuLateral = () => {
    );
 };
 
-const MenuInterno = (props: DrawerContentComponentProps) => {
+const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
    return (
       <DrawerContentScrollView>
          {/* Avatar */}
@@ -42,11 +42,17 @@ const MenuInterno = (props: DrawerContentComponentProps) => {
 
          {/* Opciones de menú */}
          <View style={styles.menuContainer}>
-            <TouchableOpacity style={styles.menuBoton}>
+            <TouchableOpacity 
+               style={styles.menuBoton}
+               onPress={() => navigation.navigate('StackNavigator')}
+            >
                <Text style={styles.menuTexto}>Home</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.menuBoton}>
+            <TouchableOpacity 
+               style={styles.menuBoton}
+               onPress={() => navigation.navigate('SettingsScreen')}
+            >
                <Text style={styles.menuTexto}>Settings</Text>
             </TouchableOpacity>
          </View>

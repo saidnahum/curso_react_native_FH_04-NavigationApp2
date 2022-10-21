@@ -13,7 +13,7 @@ const Pagina1Screen = ({ navigation }: Props) => {
             title='Ir página 2'
             onPress={() => navigation.navigate('Pagina2Screen')}
          />
-         <Text>Navegar con argumentos</Text>
+         <Text style={{ marginVertical: 20, fontSize: 20, color: 'black' }}>Navegar con argumentos</Text>
 
          <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
