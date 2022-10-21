@@ -7,6 +7,16 @@ import com.facebook.react.ReactRootView;
 
 public class MainActivity extends ReactActivity {
 
+  
+public void addListener(String eventName) {
+  // Keep: Required for RN built in Event Emitter Calls.
+}
+ 
+
+public void removeListeners(Integer count) {
+  // Keep: Required for RN built in Event Emitter Calls.
+}
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);
