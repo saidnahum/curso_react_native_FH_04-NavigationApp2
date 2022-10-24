@@ -5,13 +5,32 @@ import Tab2Screen from '../screens/Tab2Screen';
 import Tab3Screen from '../screens/Tab3Screen';
 import { StackNavigator } from './StackNavigator';
 import { styles, colores } from '../theme/appTheme';
-import { Text } from 'react-native';
-
-const Tab = createBottomTabNavigator();
+import { Text, Platform } from 'react-native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 export const Tabs = () => {
+   return Platform.OS === 'ios'
+      ? <TabsIOS />
+      : <TabsAndroid />
+}
+
+const BottomTabsAndroid = createMaterialBottomTabNavigator();
+
+export const TabsAndroid = () => {
    return (
-      <Tab.Navigator
+      <BottomTabsAndroid.Navigator>
+         <BottomTabsAndroid.Screen name="Tab1Screen" options={{ title: 'Tab 1' }} component={Tab1Screen} />
+         <BottomTabsAndroid.Screen name="Tab2Screen" options={{ title: 'Tab 2' }} component={Tab2Screen} />
+         <BottomTabsAndroid.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
+      </BottomTabsAndroid.Navigator>
+   );
+}
+
+const BottomTabsIOS = createBottomTabNavigator();
+
+export const TabsIOS = () => {
+   return (
+      <BottomTabsIOS.Navigator
          screenOptions={({ route }) => ({
             tabBarActiveTintColor: colores.primary,
             tabBarStyle: {
@@ -28,15 +47,15 @@ export const Tabs = () => {
                switch (route.name) {
                   case 'Tab1Screen':
                      iconName = 'T1'
-                  break;
+                     break;
 
                   case 'Tab2Screen':
                      iconName = 'T2'
-                  break;
+                     break;
 
                   case 'StackNavigator':
                      iconName = 'St'
-                  break;
+                     break;
                }
 
                return (
@@ -49,9 +68,9 @@ export const Tabs = () => {
          }}
       >
          {/* <Tab.Screen name="Tab1Screen" options={{ title: 'Tab 1', tabBarIcon: (props) => <Text style={{ color: props.color }}>T1</Text> }} component={Tab1Screen} /> */}
-         <Tab.Screen name="Tab1Screen" options={{ title: 'Tab 1' }} component={Tab1Screen} />
-         <Tab.Screen name="Tab2Screen" options={{ title: 'Tab 2' }} component={Tab2Screen} />
-         <Tab.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
-      </Tab.Navigator>
+         <BottomTabsIOS.Screen name="Tab1Screen" options={{ title: 'Tab 1' }} component={Tab1Screen} />
+         <BottomTabsIOS.Screen name="Tab2Screen" options={{ title: 'Tab 2' }} component={Tab2Screen} />
+         <BottomTabsIOS.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
+      </BottomTabsIOS.Navigator>
    );
 }
