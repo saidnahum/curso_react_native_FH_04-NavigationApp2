@@ -4,7 +4,7 @@ import React from 'react'
 const AlbumScreen = () => {
    return (
       <View>
-         <Text>AlbumScreen</Text>
+         <Text>Album Screen</Text>
       </View>
    )
 }

@@ -7,9 +7,9 @@ import { styles } from '../theme/appTheme'
 const Tab1Screen = () => {
    return (
       <View style={styles.globalMargin}>
-         <Text style={styles.title}>Tab1Screen</Text>
+         <Text style={styles.title}>Tab1 Screen</Text>
          <Text>
-            <Icon name="rocket" size={30} color="#900" />
+            <Icon name="airplane-outline" size={80} color="#900" />
          </Text>
       </View>
    )

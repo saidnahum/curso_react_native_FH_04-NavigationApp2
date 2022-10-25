@@ -4,7 +4,7 @@ import React from 'react'
 const ContactScreen = () => {
    return (
       <View>
-         <Text>ContactScreen</Text>
+         <Text>Contact Screen</Text>
       </View>
    )
 }

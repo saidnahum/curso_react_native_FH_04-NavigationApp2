@@ -56,9 +56,9 @@ export const TopTabsNavigator = () => {
             }
          })}
       >
-         <Tab.Screen name="ChatScreen" component={ChatScreen} />
-         <Tab.Screen name="ContactScreen" component={ContactScreen} />
-         <Tab.Screen name="AlbumScreen" component={AlbumScreen} />
+         <Tab.Screen name="Chat" component={ChatScreen} />
+         <Tab.Screen name="Contact" component={ContactScreen} />
+         <Tab.Screen name="Album" component={AlbumScreen} />
       </Tab.Navigator>
    );
 }
